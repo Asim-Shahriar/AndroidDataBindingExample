@@ -3,6 +3,7 @@
     <data>
         <import type="com.example.androiddatabindingexample.util.StringUtil"/>
         <import type="com.example.androiddatabindingexample.util.BigDecimalUtil"/>
+        <import type="android.view.View"/>
         <variable
             name="product"
             type="com.example.androiddatabindingexample.models.Product" />
@@ -103,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
                     android:textColor="@color/red2"
-                    android:text=""
+                    android:text="@{product.hasSalePrice() ? BigDecimalUtil.getValue(product.sale_price) : BigDecimalUtil.getValue(product.price)}"
                     android:id="@+id/price"/>
 
 
@@ -112,10 +113,11 @@
                     android:layout_height="wrap_content"
                     android:textSize="10sp"
                     android:textColor="@color/DarkGrey"
-                    android:text=""
+                    android:text="@{BigDecimalUtil.getValue(product.price)}"
                     android:id="@+id/original_price"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/strike_through"/>
+                    android:background="@drawable/strike_through"
+                    android:visibility="@{product.hasSalePrice() ? View.VISIBLE : View.INVISIBLE}"/>
 
             </LinearLayout>
 
