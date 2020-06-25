@@ -22,5 +22,7 @@ public class MainActivity extends AppCompatActivity {
         Products products=new Products();
         mProduct=products.PRODUCTS[0];
         mBinding.setProduct(mProduct);
+
+        mBinding.setQuantity(1);
     }
 }
