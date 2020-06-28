@@ -33,4 +33,9 @@ public class MainActivity extends AppCompatActivity implements IMainActivity{
      ChooseQuantityDialog dialog=new ChooseQuantityDialog();
      dialog.show(getSupportFragmentManager(),getString(R.string.dialog_choose_quantity));
     }
+
+    @Override
+    public void setQuantity(int quantity) {
+        mBinding.setQuantity(quantity);
+    }
 }
