@@ -10,7 +10,11 @@
         <variable
             name="quantity"
             type="int" />
+        <variable
+            name="iMainActivity"
+            type="com.example.androiddatabindingexample.IMainActivity" />
     </data>
+
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -130,7 +134,8 @@
                 android:padding="10dp"
                 android:background="@drawable/grey_rounded_button"
                 android:layout_marginTop="13dp"
-                android:id="@+id/quantity_button">
+                android:id="@+id/quantity_button"
+                android:onClick="@{()-> iMainActivity.inflateQuantityDialog()}">
 
 
                 <TextView

@@ -9,7 +9,7 @@ import com.example.androiddatabindingexample.databinding.ActivityMainBinding;
 import com.example.androiddatabindingexample.models.Product;
 import com.example.androiddatabindingexample.util.Products;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements IMainActivity{
 
     ActivityMainBinding mBinding;
     private Product mProduct;
@@ -24,5 +24,13 @@ public class MainActivity extends AppCompatActivity {
         mBinding.setProduct(mProduct);
 
         mBinding.setQuantity(1);
+        mBinding.setIMainActivity((IMainActivity)this);
+    }
+
+    @Override
+    public void inflateQuantityDialog() {
+
+     ChooseQuantityDialog dialog=new ChooseQuantityDialog();
+     dialog.show(getSupportFragmentManager(),getString(R.string.dialog_choose_quantity));
     }
 }
