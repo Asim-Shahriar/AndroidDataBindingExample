@@ -90,7 +90,8 @@
                     android:scaleType="fitCenter"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:id="@+id/image"/>
+                    android:id="@+id/image"
+                    app:imageResource="@{product.image}"/>
 
             </RelativeLayout>
 
